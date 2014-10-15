@@ -1,0 +1,61 @@
+Build HOWTO:
+
+Extract source code:
+    tar xzf spgdb.tar.gz
+This will extract a "spgdb" directory.
+Extract library source code:
+    tar xzf spgdb_library.tar.gz
+This will extract a "spgdb_library" directory.
+
+Prepare build directory (for Linux):
+    mkdir -p $YOUR_SOURCE_DIRECTOY/build/Linux
+    cd $YOUR_SOURCE_DIRECTOY/build/Linux
+
+Build debug version:
+    mkdir spgdb
+    cd spgdb
+    ../../../spgdb/buildSpgdb.sh -libs
+
+Note:
+    The option -libs can be omitted in later builds.
+
+Build release version:
+    mkdir spgdb-O3
+    cd spgdb-O3
+    ../../../spgdb/buildSpgdb.sh -libs
+
+See also the note from the debug build.
+
+Prepare build directory (for Cygwin):
+    mkdir -p $YOUR_SOURCE_DIRECTOY/build/Cygwin
+    cd $YOUR_SOURCE_DIRECTOY/build/Cygwin
+
+Build debug/release version:
+    The same commands as for Linux (see above).
+
+Summary, the directory structure should look like:
+Downward from YOUR_SOURCE_DIRECTOY:
+    source code:
+      spgdb/gdb/
+      spgdb/...
+    debug build (Linux):
+      build/Linux/spgdb/gdb/
+      build/Linux/spgdb/gdb/spgdb
+      build/Linux/spgdb/local/
+      build/Linux/spgdb/...
+    release build (Linux):
+      build/Linux/spgdb-O3/gdb/
+      build/Linux/spgdb-O3/gdb/spgdb
+      build/Linux/spgdb-O3/local/
+      build/Linux/spgdb-O3/...
+    debug build (Cygwin):
+      build/Cygwin/spgdb/gdb/
+      build/Cygwin/spgdb/gdb/spgdb.exe
+      build/Cygwin/spgdb/local/
+      build/Cygwin/spgdb/...
+    release build (Cygwin):
+      build/Cygwin/spgdb-O3/gdb/
+      build/Cygwin/spgdb-O3/gdb/spgdb.exe
+      build/Cygwin/spgdb-O3/local/
+      build/Cygwin/spgdb-O3/...
+
